@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-
+  <context:property-placeholder  location="classpath:application.properties"/>    
     <!-- Define your beans here -->
 
     <bean id="draw2D" 
@@ -32,9 +32,28 @@
           <property name = "draw3d" ref="draw3D"/>
     </bean>
 
+
+    <bean id="dataBaseOperation" class ="com.literalValuesInjection.DatabaseOperation">
+               <property name="url"  value="${database.url}" />
+               <property name="userName"  value="${database.username}" />
+               <property name="password"  value="${database.password}" />
+    </bean>
+
+
+    <bean id="car" class="com.literalValuesInjection.Car">
+       <constructor-arg  ref="dataBaseOperation"/>
+    </bean>
+
+    <bean id="plane" class="com.literalValuesInjection.Plane">
+
+            <property name="dataBaseOperation" ref="dataBaseOperation"/>
+    </bean>
+
+       
+
 </beans>
 
-
+ 
 
 
 

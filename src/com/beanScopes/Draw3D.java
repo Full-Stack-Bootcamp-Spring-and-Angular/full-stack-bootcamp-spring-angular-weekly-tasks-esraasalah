@@ -1,4 +1,4 @@
-package com.inversionofcontrol;
+package com.beanScopes;
 
 public class Draw3D {
 

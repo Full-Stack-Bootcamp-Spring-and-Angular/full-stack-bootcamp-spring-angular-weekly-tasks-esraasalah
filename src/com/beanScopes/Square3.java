@@ -1,6 +1,6 @@
-package com.inversionofcontrol;
+package com.beanScopes;
 
-public class Square2  implements ShapeInterface {
+public class Square3  implements ShapeInterface {
 
 	 Draw2D draw2d ;
 
@@ -25,7 +25,7 @@ public class Square2  implements ShapeInterface {
 	 @Override
     public void draw()
 	{
-          draw2d.draw2d("square2")  ; 
+          draw2d.draw2d("square3")  ; 
 
 	}
 	 

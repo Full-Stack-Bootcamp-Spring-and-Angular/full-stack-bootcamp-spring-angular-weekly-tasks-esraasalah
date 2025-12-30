@@ -102,7 +102,7 @@ public class DatabaseOperations {
 
 
               String sql = "SELECT * FROM vehicle WHERE id = ?";
-              try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicle_system" , "root"  , null);
+              try(Connection conn = DriverManager.getConnection(url , username , password);
              PreparedStatement ps = conn.prepareStatement(sql)) 
              {
 
@@ -131,7 +131,7 @@ public class DatabaseOperations {
    public void updateVehicle(Vehicle vehicle)
    {
             String sql = "update  vehicle set model = ?  WHERE id = ?";
-              try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicle_system" , "root"  , null);
+              try(Connection conn = DriverManager.getConnection(url , username , password);
              PreparedStatement ps = conn.prepareStatement(sql)) 
              {
 
@@ -157,7 +157,7 @@ public class DatabaseOperations {
   {
 
                  String sql = " delete from  vehicle   WHERE id = ?";
-              try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicle_system" , "root"  , null);
+              try(Connection conn = DriverManager.getConnection(url , username , password);
              PreparedStatement ps = conn.prepareStatement(sql)) 
              {
 
@@ -180,7 +180,7 @@ public class DatabaseOperations {
 
    List<Vehicle>  vehicles = new ArrayList<>();
     String sql = "SELECT * FROM vehicle ";
-              try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicle_system" , "root"  , null);
+              try(Connection conn = DriverManager.getConnection(url , username , password);
              PreparedStatement ps = conn.prepareStatement(sql)) 
              {
 

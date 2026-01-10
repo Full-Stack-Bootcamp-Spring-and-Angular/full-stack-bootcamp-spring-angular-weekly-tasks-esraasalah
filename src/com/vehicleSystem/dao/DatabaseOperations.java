@@ -44,7 +44,7 @@ public class DatabaseOperations {
     public void connectToDatabase ()
     {
            System.out.println("connection stablished");
-
+           
     }
 
 
@@ -74,12 +74,12 @@ public class DatabaseOperations {
 
                  
             String sql = "INSERT INTO vehicle (model, type) VALUES (?, ?)";
-              try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicle_system" , "root"  , null);
+              try(Connection conn = DriverManager.getConnection(url , username , password);
              PreparedStatement ps = conn.prepareStatement(sql)) 
              {
 
                     ps.setString(1, vehicle.getModel());
-                        ps.setString(2, vehicle.getType().toString()); // if enum
+                        ps.setString(2, vehicle.getType().toString()); //  enum
 
                        ps.executeUpdate();
                        System.out.println("Record inserted successfully");
@@ -103,8 +103,8 @@ public class DatabaseOperations {
 
               String sql = "SELECT * FROM vehicle WHERE id = ?";
               try(Connection conn = DriverManager.getConnection(url , username , password);
-             PreparedStatement ps = conn.prepareStatement(sql)) 
-             {
+             PreparedStatement ps = conn.prepareStatement(sql)) // try-with-resources
+             {    
 
                     ps.setInt(1, id);
                   ResultSet rs =     ps.executeQuery();

@@ -2,7 +2,7 @@ package com.inversionofcontrol;
 
 import java.util.Scanner;
 
-import org.springframework.context.ApplicationContext;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
@@ -13,7 +13,7 @@ public class Main {
 		 System.out.println(" inversion of control with xml configuration ");
 		 
 		   
-		 ApplicationContext container = new ClassPathXmlApplicationContext("application-context.xml");
+		 ClassPathXmlApplicationContext container = new ClassPathXmlApplicationContext("application-context.xml");
 		 
 		 
 		 System.out.println("enter x value");  
@@ -27,11 +27,12 @@ public class Main {
 		  
 		 Shape square = container.getBean("square" , Shape.class );
 		 
-		 System.out.println(" circle area is : "  + square.getArea(x));
+		 System.out.println(String.format(" circle area is :  %s"  , square.getArea(x)));
 		 
-		 
-		   
-		   
+		 scanner.close();
+		 container.close();
+
+   
 		   
 	   }
 	

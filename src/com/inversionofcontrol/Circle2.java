@@ -2,23 +2,20 @@ package com.inversionofcontrol;
 
 public class Circle2 implements ShapeInterface {
 
-	   Draw2D draw2d ;
+	Draw2D draw2d;
 
-	   Draw3D draw3d ;
+	Draw3D draw3d;
 
-	   public Circle2 (Draw2D draw2d ,Draw3D draw3d )
-	   {
+	public Circle2(Draw2D draw2d, Draw3D draw3d) {
 
-               this.draw2d = draw2d ;
-			   this.draw3d = draw3d ;
-	   }
+		this.draw2d = draw2d;
+		this.draw3d = draw3d;
+	}
 
-       @Override
-       public void draw()
-	   {
-                draw2d.draw2d("circle2"); 
+	@Override
+	public void draw() {
+		draw2d.draw2d("circle2");
 
-	   }
-
+	}
 
 }

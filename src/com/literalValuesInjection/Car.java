@@ -1,24 +1,19 @@
 package com.literalValuesInjection;
 
-public class Car  implements Vehicle {
+public class Car implements Vehicle {
 
+  DatabaseOperation dataBaseOperation;
 
-    DatabaseOperation dataBaseOperation ;
+  public Car(DatabaseOperation dataBaseOperation) {
 
+    this.dataBaseOperation = dataBaseOperation;
+  }
 
-    public  Car(DatabaseOperation  dataBaseOperation) 
-    {
+  @Override
+  public void saveDataToDataBase() {
 
-          this.dataBaseOperation = dataBaseOperation ;
-    }
+    dataBaseOperation.storeVehicleInDataBase("plane");
 
+  };
 
-    @Override
-  public  void saveDataToDataBase()
-    {
-
-              dataBaseOperation.storeVehicleInDataBase("plane"); 
-
-    } ;
-    
 }

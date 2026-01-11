@@ -1,15 +1,13 @@
 package com.literalValuesInjection;
 
-public class Plane  implements Vehicle{
+public class Plane implements Vehicle {
 
-
-   DatabaseOperation dataBaseOperation ;
+    DatabaseOperation dataBaseOperation;
 
     @Override
-  public  void saveDataToDataBase()
-    {
+    public void saveDataToDataBase() {
 
-               dataBaseOperation.storeVehicleInDataBase("plane");
+        dataBaseOperation.storeVehicleInDataBase("plane");
 
     }
 
@@ -17,11 +15,8 @@ public class Plane  implements Vehicle{
         return dataBaseOperation;
     }
 
-
-
-
     public void setDataBaseOperation(DatabaseOperation dataBaseOperation) {
         this.dataBaseOperation = dataBaseOperation;
-    } ;
-    
+    };
+
 }

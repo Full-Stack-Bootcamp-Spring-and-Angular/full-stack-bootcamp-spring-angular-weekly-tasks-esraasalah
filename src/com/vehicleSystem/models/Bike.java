@@ -11,36 +11,28 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-
-
+import com.vehicleSystem.enums.Type;
 
 @Setter
-@Component
-@Scope("property")
+
+@Scope("prototype")
 @NoArgsConstructor
 public class Bike implements Vehicle {
 
-    @Autowired
-    DatabaseOperations   databaseOperations ;
+    Integer id;
+    String model;
+    Type type;
 
-     Integer id ;
-    String model ;
-    Type type ;
+    public Bike(String model, Type type) {
 
-
-    public Bike( String model , Type type)
-    {
-        
-        this.model = model ;
-        this.type = type ;
+        this.model = model;
+        this.type = type;
     }
 
-    public Bike( Integer id ,String model , Type type)
-    {
-        this.id = id ;
-        this.model = model ;
-        this.type = type ;
+    public Bike(Integer id, String model, Type type) {
+        this.id = id;
+        this.model = model;
+        this.type = type;
     }
 
     @Override
@@ -48,21 +40,16 @@ public class Bike implements Vehicle {
         return "Bike [id=" + id + ", model=" + model + ", type=" + type + "]";
     }
 
-
     public Integer getId() {
         return id;
     }
-
 
     public String getModel() {
         return model;
     }
 
-
     public Type getType() {
         return type;
     }
 
-
-    
 }

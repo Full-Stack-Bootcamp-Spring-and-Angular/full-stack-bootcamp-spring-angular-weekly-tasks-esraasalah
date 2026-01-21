@@ -3,6 +3,7 @@ package com.vehicleSystem.models;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import com.vehicleSystem.enums.Type;
 
 import com.vehicleSystem.dao.DatabaseOperations;
 
@@ -11,25 +12,15 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @Component
-@Scope("property")
+@Scope("prototype")
 @AllArgsConstructor
-public class Car  implements Vehicle  {
+public class Car implements Vehicle {
 
-public  DatabaseOperations   databaseOperations ;
+  Integer id;
+  String model;
+  Type type;
 
-       @Autowired
-     public  Car(DatabaseOperations   databaseOperations)
-       {
-            this.databaseOperations = databaseOperations ;    
-
-       }
-
-    Integer id ;
-    String model ;
-    Type type ;
-    
 }

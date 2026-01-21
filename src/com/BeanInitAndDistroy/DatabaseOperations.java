@@ -2,17 +2,12 @@ package com.BeanInitAndDistroy;
 
 public class DatabaseOperations {
 
+   public void connectToDatabase() {
+      System.out.println("connection to database established ……");
+   }
 
-          public void connectToDatabase()
-          {
-             System.out.println("connection to database established ……");
-          }
+   public void disconnectFromDatabase() {
+      System.out.println("connection to database closed……");
+   }
 
-
-            public void disconnectFromDatabase()
-          {
-             System.out.println("connection to database closed……");
-          }
-
-    
 }

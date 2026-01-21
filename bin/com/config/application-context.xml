@@ -34,7 +34,7 @@
     </bean>
 
 
-  <bean id="init-destroy" 
+  <bean id="databaseOperations" 
           class="com.BeanInitAndDistroy.DatabaseOperations" 
           init-method ="connectToDatabase"
           destroy-method ="connectToDatabase"

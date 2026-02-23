@@ -1,16 +1,22 @@
-package main.java.com.myApp.models;
+package com.myApp.models;
 
+import java.time.LocalDate;
 import java.util.Date;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+
+
+@Getter
+@Setter
 public class User {
     
     String firstName ;
     String lastName ;
-    Date dateOfBirth ;
+    LocalDate dateOfBirth ;
     String city ;
+  
 
 
 

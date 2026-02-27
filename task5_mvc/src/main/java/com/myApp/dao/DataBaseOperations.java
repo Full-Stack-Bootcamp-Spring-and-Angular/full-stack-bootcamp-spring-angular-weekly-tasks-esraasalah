@@ -1,4 +1,4 @@
-package com.myApp.Dao;
+package com.myApp.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -24,25 +24,27 @@ import lombok.Setter;
 @Getter
 public class DataBaseOperations {
 
-  @Value("${database.url}")
-  private String url;
+  //@Value("${database.url}")
+  private String url="jdbc:mysql://localhost:3309/test_db";
 
-  @Value("${database.username}")
-  private String username;
+ // @Value("${database.username}")
+  private String username="root";
 
-  @Value("${database.password}")
-  private String password;
+  //@Value("${database.password}")
+  private String password="password123";
 
   Connection conn;
 
   @PostConstruct // init method
   public void connectToDatabase() {
-    System.out.println("connection stablished");
 
     try {
+
       conn = DriverManager.getConnection(url, username, password);
+        System.out.println("connection stablished");
     } catch (SQLException e) {
       // TODO Auto-generated catch block
+        System.out.println("connection failed");
       e.printStackTrace();
     }
   }
@@ -61,6 +63,7 @@ public class DataBaseOperations {
     }
 
   }
+
 
   public void saveUser(User user) {
     String sql = "INSERT INTO users (first_name, last_name,  date_of_birth , City ) VALUES (?, ?, ?, ?)";

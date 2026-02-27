@@ -1,21 +1,26 @@
 package com.myApp.controllers;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.myApp.dao.DataBaseOperations;
+import com.myApp.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class userController {
+public class UserController {
+
+    @Autowired
+    DataBaseOperations dataBaseOperations ;
 
      @RequestMapping("/register")
     public String showHomePage()
     {
-        return "userForm";
+        return "register";
     }
 
 
@@ -35,7 +40,12 @@ public class userController {
 
           // save the user data in database 
 
-          // get user data from database to be displayed in the user profile page 
+        User user = new User(null , firstName , lastName , dateOfBirth , city) ;
+        System.out.println("save user to database");
+
+
+        dataBaseOperations.saveUser(user);
+
 
           
 

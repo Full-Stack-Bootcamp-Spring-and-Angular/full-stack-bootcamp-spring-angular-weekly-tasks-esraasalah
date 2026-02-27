@@ -12,6 +12,8 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 
+
+
     <!-- Step 3: Define Spring MVC view resolver -->
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -20,12 +22,13 @@
     </bean>
 
     <!-- Step 4: Add support for component scanning -->
-    <context:component-scan base-package="com.myApp.controllers" />
+    <context:component-scan base-package="com.myApp" />
     <!-- Step 5: Add support for conversion, formatting and validation support -->
     <mvc:annotation-driven/>
 
     <!-- this line to config reading css,images and javascript files -->
     <!-- <mvc:resources mapping="/resources/**" location="/resources/"/> -->
+
 
 </beans>
 

@@ -1,0 +1,2 @@
+com.myApp.config.WebMvcConfigrations=org.springframework.stereotype.Component
+com.myApp.controllers.HomeController=org.springframework.stereotype.Component

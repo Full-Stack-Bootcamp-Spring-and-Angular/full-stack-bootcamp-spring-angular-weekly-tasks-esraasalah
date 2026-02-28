@@ -4,52 +4,102 @@
 <head>
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
+    <style>
+    .card-size{
+    width:30vw;
+    }
+    body{
+    background:lightGray;
+    }
+    </style>
+
 </head>
 
-<body>
-    <div class="container">
-        <h2>User Form</h2>
-        <br><br>
-
-        <form:form action="processForm" modelAttribute="userData">
-
-            <label>Username:</label>
-            <form:input type="text" placeholder="username" path="userName" class="form-control"/>
-            <br><br>
-
-            <label>Password:</label>
-            <form:input type="password" placeholder="password" path="password" class="form-control"/>
-            <br><br>
-
-
-
-            <label>Country:</label>
-            <form:select path="country" class="form-control">
-                <form:option value="Egypt" label="Egypt"/>
-                <form:option value="Qatar" label="Qatar"/>
-                <form:option value="Syria" label="Syria"/>
-            </form:select>
-            <br><br>
-
-
-            <label>Preferred Programming Language</label><br>
-            Java <form:radiobutton path="ProgrammingLanguage" value="Java"/>
-            C++ <form:radiobutton path="ProgrammingLanguage" value="C++"/>
-            Python <form:radiobutton path="ProgrammingLanguage" value="Python"/>
-            <br><br>
-
-
-            <label>Preferred Operating System</label><br>
-            Linux <form:checkbox path="OperatingSystem" value="Linux"/>
-            Windows <form:checkbox path="OperatingSystem" value="Windows"/>
-            Mac <form:checkbox path="OperatingSystem" value="Mac"/>
-            <br><br>
-
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-
-        </form:form>
+<body class="container my-4">
+    <div class=" d-flex justify-content-center">
+      <h1> User Form</h1>
     </div>
+
+
+
+  <form>
+  <div class="d-flex justify-content-center">
+    <div class=" card p-4 card-size " >
+    <div class="row gap-2">
+    <div clas="col-12">
+    <input class="form-control" type="text" placeholder="User Name" aria-label="default input example">
+    </div>
+    <div clas="col-12">
+    <input type="password" id="inputPassword5" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
+    </div>
+    <div clas="col-12">
+    <select class="form-select" aria-label="Default select example">
+      <option value="1" selected >Brazil</option>
+      <option value="2">London</option>
+      <option value="3">Paris</option>
+    </select>
+    </div>
+    <div clas="col-12">
+
+    <p>
+    <strong>
+        Preferred Programming Language
+    </strong>
+    </p>
+
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="lang" id="Java" value="1" checked >
+      <label class="form-check-label" for="Java">Java</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="lang" id="C" value="2">
+      <label class="form-check-label" for="C">C</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="lang" id="PHP" value="3" >
+      <label class="form-check-label" for="PHP">PHP</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="lang" id="Ruby" value="4" >
+      <label class="form-check-label" for="Ruby">Ruby</label>
+    </div>
+    </div>
+
+
+    <div clas="col-12">
+      <p>
+        <strong>
+            Preferred Operating System
+        </strong>
+      </p>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="Linux" value="Linux" checked>
+        <label class="form-check-label" for="Linux">Linux</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="Mac_OS" value="Mac_OS" checked>
+        <label class="form-check-label" for="Mac_OS">Mac OS</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="MS_Windows" value="MS_Windows">
+        <label class="form-check-label" for="MS_Windows"> MS Windows</label>
+      </div>
+
+    </div>
+    <div clas="col-12" >
+    <button type="button" class="btn btn-danger w-100"  >Submit</button>
+    </div>
+    </div>
+
+
+
+
+  </div>
+  </div>
+
+  </form>
+
+
 
 </body>
 </html>

@@ -20,7 +20,7 @@
 	</bean>
 
 
-	<context:component-scan base-package="main.com.myApp" />
+	<context:component-scan base-package="com.myApp" />
 
 
 	<mvc:annotation-driven/>

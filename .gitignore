@@ -15,7 +15,6 @@ bin/
 
 # IDE files
 .idea/
-.vscode/
 .settings/
 
 # Eclipse files
@@ -31,3 +30,5 @@ Thumbs.db
 
 # Libraries (if generated)
 libs/
+config.bat
+node_modules
